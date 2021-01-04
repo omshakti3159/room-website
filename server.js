@@ -11,12 +11,13 @@ const app = express();
 let db;
 
 //middlewares
+app.use(cors())
 app.use(
   bodyParser.urlencoded({
     extended: true,
   })
 );
-app.use(cors())
+
 app.use(bodyParser.json());
 
 //home api
