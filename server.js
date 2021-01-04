@@ -23,14 +23,14 @@ app.get("/", (req, res) => {
   res.send("hii server is running");
 });
 // api to add expenditure for a person
-app.post("/personexp1", (req, res) => {
+app.post("/addpersonexp", (req, res) => {
   let data = req.body;
   console.log(data);
   db.collection("expenditure").insertOne(data);
   res.send("data added successfully");
 });
 //api to get expenditure for specific person
-app.get("/personexp", (req, res) => {
+app.get("/getpersonexp", (req, res) => {
   let querry = {}
     if(req.query.name)
         querry={name:req.query.name}
