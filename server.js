@@ -29,7 +29,8 @@ app.post("/addpersonexp", (req, res) => {
   let data = req.body;
   console.log(data);
   db.collection("expenditure").insertOne(data);
-  res.send("data added successfully");
+  let status={status:true}
+  res.send(status);
 });
 //api to get expenditure for specific person
 app.get("/getpersonexp", (req, res) => {
